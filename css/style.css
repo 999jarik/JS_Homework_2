@@ -1,0 +1,40 @@
+.title {
+    margin: 0 auto;
+    padding: 25px 0 25px 0;
+    width: fit-content;
+    font-size: 28px;
+}
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+.test {
+    padding-left: 80px;
+    padding-bottom: 25px;
+}
+.subtitle {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.list_answers {
+    padding-bottom: 20px;
+}
+.answer_item {
+    padding: 2px 0 2px 0;
+}
+.box_button {
+    width: fit-content;
+    margin: 0 auto;
+}
+.button {
+    height: 40px;
+    width: 280px;
+    background-color: rgb(201, 202, 255);
+    border: 2px solid #000;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: rgb(161, 162, 255);
+    box-shadow: 2px -2px 5px 0px rgba(0,0,0,0.25);
+}
