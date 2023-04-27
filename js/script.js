@@ -38,19 +38,22 @@ document.body.appendChild(wrapper);
 wrapper.appendChild(formMain);
 formMain.appendChild(ulTest);
 
-// Block Question 1 
-let liQuestion1 = pageBuilder.createItem('li', 'test_item');
-let subtitleQ1 = pageBuilder.createItem('h2', 'subtitle', '1. Питання №1');
-let ulAnswers1 = pageBuilder.createItem('ul', 'list_answers');
-let liAnswItemQ1A1 = pageBuilder.createItem('li', 'answer_item');
-let labelQ1A1 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №1');
-let radioQ1A1 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question1','q1_a1', 'answ1');
-let liAnswItemQ1A2 = pageBuilder.createItem('li', 'answer_item');
-let labelQ1A2 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №2');
-let radioQ1A2 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question1','q1_a2', 'answ2');
-let liAnswItemQ1A3 = pageBuilder.createItem('li', 'answer_item');
-let labelQ1A3 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №3');
-let radioQ1A3 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question1','q1_a3', 'answ3');
+for (var q = 1; q < 4; q++) {
+    let dynVarNameQuestLi = "liQuestion" + q;
+    let dynVarNameQuestSub = "subtitleQ" + q;
+    let dynVarNameQuestUl = "ulAnswers" + q;
+    eval(dynVarNameQuestLi + " = pageBuilder.createItem('li', 'test_item')");
+    eval(dynVarNameQuestSub + " = pageBuilder.createItem('h2', 'subtitle', q + '. Питання №' + q)");
+    eval(dynVarNameQuestUl + " = pageBuilder.createItem('ul', 'list_answers')");
+    for (var i = 1; i < 4; i++) {
+        let dynamicVarNameLabel = "labelQ" + q + "A" + i;
+        let dynamicVarNameRadio = "radioQ" + q + "A" + i;
+        let dynamicVarNameLi = "liAnswItemQ" + q + "A" + i;
+        eval(dynamicVarNameLi + " = pageBuilder.createItem('li', 'answer_item')");
+        eval(dynamicVarNameLabel + "= pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №' + i)");
+        eval(dynamicVarNameRadio + "= pageBuilder.createInput('input', 'item_radio', 'radio', 'question1','q' + q + '_a' + i, 'answ' + i)");
+    };
+};
 
 ulTest.appendChild(liQuestion1);
 liQuestion1.appendChild(subtitleQ1);
@@ -65,19 +68,6 @@ ulAnswers1.appendChild(liAnswItemQ1A3);
 liAnswItemQ1A3.appendChild(labelQ1A3);
 labelQ1A3.prepend(radioQ1A3);
 
-// Block Question 2 
-let liQuestion2 = pageBuilder.createItem('li', 'test_item');
-let subtitleQ2 = pageBuilder.createItem('h2', 'subtitle', '2. Питання №2');
-let ulAnswers2 = pageBuilder.createItem('ul', 'list_answers');
-let liAnswItemQ2A1 = pageBuilder.createItem('li', 'answer_item');
-let labelQ2A1 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №1');
-let radioQ2A1 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question2','q2_a1', 'answ1');
-let liAnswItemQ2A2 = pageBuilder.createItem('li', 'answer_item');
-let labelQ2A2 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №2');
-let radioQ2A2 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question2','q2_a2', 'answ2');
-let liAnswItemQ2A3 = pageBuilder.createItem('li', 'answer_item');
-let labelQ2A3 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №3');
-let radioQ2A3 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question2','q2_a3', 'answ3');
 
 ulTest.appendChild(liQuestion2);
 liQuestion2.appendChild(subtitleQ2);
@@ -92,19 +82,6 @@ ulAnswers2.appendChild(liAnswItemQ2A3);
 liAnswItemQ2A3.appendChild(labelQ2A3);
 labelQ2A3.prepend(radioQ2A3);
 
-// Block Question 3 
-let liQuestion3 = pageBuilder.createItem('li', 'test_item');
-let subtitleQ3 = pageBuilder.createItem('h2', 'subtitle', '3. Питання №3');
-let ulAnswers3 = pageBuilder.createItem('ul', 'list_answers');
-let liAnswItemQ3A1 = pageBuilder.createItem('li', 'answer_item');
-let labelQ3A1 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №1');
-let radioQ3A1 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question3','q3_a1', 'answ1');
-let liAnswItemQ3A2 = pageBuilder.createItem('li', 'answer_item');
-let labelQ3A2 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №2');
-let radioQ3A2 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question3','q3_a2', 'answ2');
-let liAnswItemQ3A3 = pageBuilder.createItem('li', 'answer_item');
-let labelQ3A3 = pageBuilder.createItem('label', 'label-radio', ' Варіант відповіді №3');
-let radioQ3A3 = pageBuilder.createInput('input', 'item_radio', 'radio', 'question3','q3_a3', 'answ3');
 
 ulTest.appendChild(liQuestion3);
 liQuestion3.appendChild(subtitleQ3);
@@ -118,7 +95,6 @@ labelQ3A2.prepend(radioQ3A2);
 ulAnswers3.appendChild(liAnswItemQ3A3);
 liAnswItemQ3A3.appendChild(labelQ3A3);
 labelQ3A3.prepend(radioQ3A3);
-// End blocks question
 
 let boxButton = pageBuilder.createItem('div', 'box_button');
 formMain.appendChild(boxButton);
